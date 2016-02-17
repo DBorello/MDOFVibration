@@ -39,7 +39,7 @@ function VibrationCtrl($scope, $interval) {
 
     $scope.CalculateProperties = function() {
         //$scope.nDof = $scope.M.length;
-        $scope.nDof = $scope.nDofRaw;
+        $scope.nDof = parseInt($scope.nDofRaw);
         $scope.M = listToMatrix($scope.Mraw.split(","),$scope.nDof);
         $scope.K = listToMatrix($scope.Kraw.split(","),$scope.nDof);
         $scope.u0 = $scope.u0raw.split(",");
@@ -251,8 +251,11 @@ function VibrationCtrl($scope, $interval) {
         dX = xMax/($scope.nDof+1);
 
         var canvas = document.getElementById('ModalCanvas');
+
+
         paper.setup(canvas);
         paper.project.clear();
+        paper.project.activeLayer.removeChildren();
 
         ModalRefLine = [];
         ModalDOFs = [];
@@ -267,10 +270,12 @@ function VibrationCtrl($scope, $interval) {
             text.justification = 'center';
             text.content = 'Mode ' + (j+1);
             text.fontSize = 24;
+            text.fillColor = $scope.ModalChart.series[j].color;
             text = new paper.PointText(new paper.Point((j+1)*dX,yMax+50));
             text.justification = 'center';
             text.content = Math.round($scope.w[j]*100)/100 + ' Rad/s';
             text.fontSize = 24;
+            text.fillColor = $scope.ModalChart.series[j].color;
 
             DOFs = [];
             for (i = 0; i < $scope.nDof; i++) {
@@ -304,6 +309,7 @@ function VibrationCtrl($scope, $interval) {
     $scope.UpdateModal = function(u, Eta) {
         yMax = 200;
         xMax = 800;
+
         dY = yMax/($scope.nDof+1);
         dX = xMax/($scope.nDof+1);
         for (j = 0; j < $scope.nDof; j++) {
@@ -311,7 +317,6 @@ function VibrationCtrl($scope, $interval) {
             um = numeric.dot(Eta[j],numeric.transpose($scope.Phi)[j]);
             for (i = 0; i < $scope.nDof; i++) {
                 DOFs[i].position = new paper.Point((j+1)*dX + um[i] /$scope.U[j]* dX *.4, yMax - (i + 1) * dY)
-
             }
         }
 
