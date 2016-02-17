@@ -1,0 +1,27 @@
+{
+  "name": "MDOFVibration",
+  "authors": [
+    "Dan Borello <daniel.borello@oregonstate.edu>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "angular": "angularjs#~1.4.8",
+    "highcharts": "~4.2.1",
+    "paper": "~0.9.25",
+    "MathJax": "~2.6.0",
+    "angular-bootstrap-slider": "~0.1.21"
+  }
+}

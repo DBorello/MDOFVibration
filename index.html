@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>MDOF Vibration</title>
+
+        <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="bower_components/highcharts/highcharts.js"></script>
+        <script type="text/javascript" src="bower_components/paper/dist/paper-full.min.js"></script>
+        <script type="text/javascript" async src="bower_components/MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        <script src="bower_components/seiyria-bootstrap-slider/js/bootstrap-slider.js"></script>
+        <script type="text/javascript" src="bower_components/angular-bootstrap-slider/slider.js"></script>
+
+        <link rel="stylesheet" href="Styles.css">
+    </head>
+
+    <body ng-app="app" ng-controller="VibrationCtrl">
+
+        <div><h1> SDOF Vibration</h1></div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <canvas id="PhysicalCanvas"></canvas>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <canvas id="ModalCanvas"></canvas>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div id="PhysicalChart" class="PhysicalPlot"></div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div id="ModalChart" class="ModalPlot"></div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
+    </body>
+</html>
