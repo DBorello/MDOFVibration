@@ -1,35 +1,25 @@
 body{text-align:center}
 
 
-#PhysicalCanvas {
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    width: 800px;
-    height: 200px;
-}
-
 #ModalCanvas {
     padding-left: 0;
     padding-right: 0;
     margin-left: auto;
     margin-right: auto;
     display: block;
-    width: 800px;
-    height: 200px;
+    width: 1000px;
+    height: 250px;
 }
 
 
-.PhysicalChart{
-     width: 800px;
+#PhysicalChart{
+     width: 1000px;
      height: 400px;
      margin: 0 auto
  }
 
-.ModalChart{
-    width: 800px;
+#ModalChart{
+    width: 1000px;
     height: 400px;
     margin: 0 auto
 }

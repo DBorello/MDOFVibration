@@ -22,6 +22,7 @@
     "highcharts": "~4.2.1",
     "paper": "~0.9.25",
     "MathJax": "~2.6.0",
-    "angular-bootstrap-slider": "~0.1.21"
+    "angular-bootstrap-slider": "~0.1.21",
+    "numericjs": "~1.2.6"
   }
 }

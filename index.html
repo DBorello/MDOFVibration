@@ -10,47 +10,82 @@
         <script type="text/javascript" src="bower_components/highcharts/highcharts.js"></script>
         <script type="text/javascript" src="bower_components/paper/dist/paper-full.min.js"></script>
         <script type="text/javascript" async src="bower_components/MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-        <script src="bower_components/seiyria-bootstrap-slider/js/bootstrap-slider.js"></script>
-        <script type="text/javascript" src="bower_components/angular-bootstrap-slider/slider.js"></script>
 
+        <script type="text/javascript" src="bower_components/numericjs/src/numeric.js"></script>
+        <script type="text/javascript" src="Vibration.js"></script>
+
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
         <link rel="stylesheet" href="Styles.css">
     </head>
 
     <body ng-app="app" ng-controller="VibrationCtrl">
+        <div class="container">
+            <div><h1> MDOF Vibration </h1></div>
 
-        <div><h1> SDOF Vibration</h1></div>
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <canvas id="PhysicalCanvas"></canvas>
+            <div class="row">
+                <div class="col-md-12">
+                    <canvas id="ModalCanvas" keepalive="true"></canvas>
+                </div>
             </div>
-            <div class="col-md-3"></div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <canvas id="ModalCanvas"></canvas>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="PhysicalChart"></div>
+                </div>
             </div>
-            <div class="col-md-3"></div>
-        </div>
 
-
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-                <div id="PhysicalChart" class="PhysicalPlot"></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="ModalChart"></div>
+                </div>
             </div>
-            <div class="col-md-2"></div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-                <div id="ModalChart" class="ModalPlot"></div>
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-5">
+                    <h3>Input</h3>
+
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">\(DOF\)</div>
+                                <input type="text" ng-model="nDofRaw" class="form-control" style = "width:50px;" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">\(M\)</div>
+                                <input type="text" ng-model="Mraw" class="form-control" style = "width:500px;" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">\(K\)</div>
+                                <input type="text" ng-model="Kraw" class="form-control" style = "width:500px;" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">\(u_0\)</div>
+                                <input type="text" ng-model="u0raw" class="form-control" style = "width:500px;" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">\(v_0\)</div>
+                                <input type="text" ng-model="v0raw" class="form-control" style = "width:500px;" >
+                            </div>
+                        </div>
+                    </form>
+
+                    <button class="btn btn-success" ng-click="Restart()">Update  <span class="glyphicon glyphicon-ok"></span></button>
+
+                </div>
+                <div class="col-md-1"></div>
             </div>
-            <div class="col-md-2"></div>
-        </div>
 
+        </div>
     </body>
 </html>
