@@ -26,13 +26,10 @@ function VibrationCtrl($scope, $interval) {
 
 
     $scope.nDofi = 3;
-    $scope.Mraw = '1,0,0,0,1,0,0,0,1';
-    $scope.Kraw = '2,-1,0,-1, 2,-1,0,-1,2';
-    $scope.u0raw = '0,1,1';
-    $scope.v0raw = '0,0,0';
-
     $scope.Mi = [[1,0,0],[0,1,0],[0,0,1]];
     $scope.Ki = [[2,-1,0],[-1,2,-1],[0,-1,2]];
+    $scope.u0i = [0,1,1];
+    $scope.v0i = [0,0,0];
 
     $scope.SetDOF = function() {
         n = $scope.nDofi;
@@ -45,8 +42,8 @@ function VibrationCtrl($scope, $interval) {
         $scope.nDof = $scope.nDofi;
         $scope.M = $scope.Mi//listToMatrix($scope.Mraw.split(","),$scope.nDof);
         $scope.K = $scope.Ki//listToMatrix($scope.Kraw.split(","),$scope.nDof);
-        $scope.u0 = $scope.u0raw.split(",");
-        $scope.v0 = $scope.v0raw.split(",");
+        $scope.u0 = $scope.u0i;
+        $scope.v0 = $scope.v0i;
 
         $scope.SetN();
 
@@ -112,6 +109,9 @@ function VibrationCtrl($scope, $interval) {
         while ($scope.ModalChart.series.length > 0) {
             $scope.ModalChart.series[0].remove();
         }
+
+        $scope.PhysicalChart.colorCounter = 0;
+        $scope.ModalChart.colorCounter = 0;
         //Add series to charts
         for (i = 1; i <= $scope.nDof; i++) {
             SeriesOptions = {

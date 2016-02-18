@@ -64,7 +64,7 @@
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-4">
-                    <h3>Mass Matrix</h3>
+                    <h4>Mass Matrix \(\mathbf{M}\)</h4>
                     <table>
                         <tr ng-repeat="Row in Mi">
                             <td ng-repeat="I in Row track by $index">
@@ -72,14 +72,32 @@
                             </td>
                         </tr>
                     </table>
+
+                    <h4>Initial Position \(\mathbf{u}(0)\)</h4>
+                    <table>
+                        <tr>
+                            <td ng-repeat="I in u0i track by $index">
+                                <input type="number" ng-model="u0i[$index]" class="form-control">
+                            </td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="col-md-2"></div>
                 <div class="col-md-4">
-                    <h3>Stiffness Matrix</h3>
+                    <h4>Stiffness Matrix \(\mathbf{K}\)</h4>
                     <table>
                         <tr ng-repeat="Row in Ki">
                             <td ng-repeat="I in Row track by $index">
                                 <input type="number" ng-model="Row[$index]" class="form-control">
+                            </td>
+                        </tr>
+                    </table>
+
+                    <h4>Initial Velocity \(\mathbf{v}(0)\)</h4>
+                    <table>
+                        <tr>
+                            <td ng-repeat="I in v0i track by $index">
+                                <input type="number" ng-model="v0i[$index]" class="form-control">
                             </td>
                         </tr>
                     </table>
