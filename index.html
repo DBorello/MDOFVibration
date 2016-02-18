@@ -41,39 +41,15 @@
             </div>
 
             <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-5">
+                <div class="col-md-5"></div>
+                <div class="col-md-2">
                     <h3>Input</h3>
 
                     <form class="form-horizontal">
                         <div class="form-group">
                             <div class="input-group">
-                                <div class="input-group-addon">\(DOF\)</div>
-                                <input type="text" ng-model="nDofRaw" class="form-control" style = "width:50px;" >
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon">\(M\)</div>
-                                <input type="text" ng-model="Mraw" class="form-control" style = "width:500px;" >
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon">\(K\)</div>
-                                <input type="text" ng-model="Kraw" class="form-control" style = "width:500px;" >
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon">\(u_0\)</div>
-                                <input type="text" ng-model="u0raw" class="form-control" style = "width:500px;" >
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <div class="input-group-addon">\(v_0\)</div>
-                                <input type="text" ng-model="v0raw" class="form-control" style = "width:500px;" >
+                                <div class="input-group-addon">DOF</div>
+                                <input type="text" ng-model="nDofRaw" class="form-control" " style = "width:50px;" >
                             </div>
                         </div>
                     </form>
@@ -81,8 +57,37 @@
                     <button class="btn btn-success" ng-click="Restart()">Update  <span class="glyphicon glyphicon-ok"></span></button>
 
                 </div>
+                <div class="col-md-5"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-4">
+                    <h3>Mass Matrix</h3>
+                    <table>
+                        <tr ng-repeat="Row in Mi">
+                            <td ng-repeat="I in Row track by $index">
+                                <input type="number" ng-model="Row[$index]" class="form-control">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+                    <h3>Stiffness Matrix</h3>
+                    <table>
+                        <tr ng-repeat="Row in Ki">
+                            <td ng-repeat="I in Row track by $index">
+                                <input type="number" ng-model="Row[$index]" class="form-control">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+
                 <div class="col-md-1"></div>
             </div>
+
 
         </div>
     </body>

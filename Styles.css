@@ -23,3 +23,7 @@ body{text-align:center}
     height: 400px;
     margin: 0 auto
 }
+
+input {
+    text-align: center;
+}
