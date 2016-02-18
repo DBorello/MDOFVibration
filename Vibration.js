@@ -271,7 +271,7 @@ function VibrationCtrl($scope, $interval, ngUrlBind) {
             ModalRefLine[j] = new paper.Path();
             ModalRefLine[j].strokeColor = 'black';
             ModalRefLine[j].strokeWidth = 5;
-            ModalRefLine[j].add(new paper.Point((j+1)*dX,0));
+            ModalRefLine[j].add(new paper.Point((j+1)*dX,10));
             ModalRefLine[j].add(new paper.Point((j+1)*dX,yMax));
             text = new paper.PointText(new paper.Point((j+1)*dX,yMax+20));
             text.justification = 'center';
@@ -297,7 +297,7 @@ function VibrationCtrl($scope, $interval, ngUrlBind) {
         var PhysRefLine = new paper.Path();
         PhysRefLine.strokeColor = 'black';
         PhysRefLine.strokeWidth = 5;
-        PhysRefLine.add(new paper.Point(xMid,0));
+        PhysRefLine.add(new paper.Point(xMid,10));
         PhysRefLine.add(new paper.Point(xMid,yMax));
         text = new paper.PointText(new paper.Point((j+1)*dX,yMax+20));
         text.justification = 'center';
