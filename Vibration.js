@@ -24,14 +24,8 @@ function maxAbsArray(a) {
 }
 function VibrationCtrl($scope, $interval) {
 
-    $scope.nDofRaw = 2;
-    $scope.Mraw = '1,0,0,1';
-    $scope.Kraw = '2,-1,-1,2';
-    $scope.u0raw = '0,1';
-    $scope.v0raw = '0,0';
 
-
-    $scope.nDofRaw = 3;
+    $scope.nDofi = 3;
     $scope.Mraw = '1,0,0,0,1,0,0,0,1';
     $scope.Kraw = '2,-1,0,-1, 2,-1,0,-1,2';
     $scope.u0raw = '0,1,1';
@@ -40,16 +34,19 @@ function VibrationCtrl($scope, $interval) {
     $scope.Mi = [[1,0,0],[0,1,0],[0,0,1]];
     $scope.Ki = [[2,-1,0],[-1,2,-1],[0,-1,2]];
 
+    $scope.SetDOF = function() {
+        n = $scope.nDofi;
+        $scope.Mi = numeric.identity(n);
+        $scope.Ki = numeric.identity(n);
+    };
+
     $scope.CalculateProperties = function() {
         //$scope.nDof = $scope.M.length;
-        $scope.nDof = parseInt($scope.nDofRaw);
+        $scope.nDof = $scope.nDofi;
         $scope.M = $scope.Mi//listToMatrix($scope.Mraw.split(","),$scope.nDof);
         $scope.K = $scope.Ki//listToMatrix($scope.Kraw.split(","),$scope.nDof);
         $scope.u0 = $scope.u0raw.split(",");
         $scope.v0 = $scope.v0raw.split(",");
-
-        console.log($scope.Mi)
-
 
         $scope.SetN();
 
