@@ -1,4 +1,4 @@
-var app = angular.module('app', []); // this creates a module
+var app = angular.module('app', ['ngUrlBind']); // this creates a module
 
 //Todo
 //Input
@@ -22,7 +22,7 @@ function maxAbsArray(a) {
     var max=Math.abs(a[0]); for(var i=0,j=a.length;i<j;i++){max=Math.abs(a[i])>max?Math.abs(a[i]):max};
     return max;
 }
-function VibrationCtrl($scope, $interval) {
+function VibrationCtrl($scope, $interval, ngUrlBind) {
 
 
     $scope.nDofi = 3;
@@ -30,6 +30,12 @@ function VibrationCtrl($scope, $interval) {
     $scope.Ki = [[2,-1,0],[-1,2,-1],[0,-1,2]];
     $scope.u0i = [0,1,1];
     $scope.v0i = [0,0,0];
+
+    ngUrlBind($scope, 'nDofi');
+    ngUrlBind($scope, 'Mi');
+    ngUrlBind($scope, 'Ki');
+    ngUrlBind($scope, 'u0i');
+    ngUrlBind($scope, 'v0i');
 
     $scope.SetDOF = function() {
         n = $scope.nDofi;

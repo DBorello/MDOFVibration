@@ -23,6 +23,8 @@
     "paper": "~0.9.25",
     "MathJax": "~2.6.0",
     "angular-bootstrap-slider": "~0.1.21",
-    "numericjs": "~1.2.6"
+    "numericjs": "~1.2.6",
+    "ngUrlBind": "^0.0.2",
+    "jsurl": "Sage/jsurl"
   }
 }
