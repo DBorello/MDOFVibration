@@ -29,7 +29,7 @@ function VibrationCtrl($scope, $interval, ngUrlBind) {
     $scope.Mi = [[1,0,0],[0,1,0],[0,0,1]];
     $scope.Ki = [[2,-1,0],[-1,2,-1],[0,-1,1]];
     $scope.u0i = [0,1,1];
-    $scope.v0i = [0,0,0];
+    v = [0,0,0];
 
     ngUrlBind($scope, 'nDofi');
     ngUrlBind($scope, 'Mi');
@@ -41,6 +41,10 @@ function VibrationCtrl($scope, $interval, ngUrlBind) {
         n = $scope.nDofi;
         $scope.Mi = numeric.identity(n);
         $scope.Ki = numeric.identity(n);
+        a=i=[];for(;i<n;)a[i++]=1; //Create array of 1s
+        $scope.u0i = a;
+        a=i=[];for(;i<n;)a[i++]=0; //Create array of 0s
+        $scope.v0i = a;
     };
 
     $scope.CalculateProperties = function() {
