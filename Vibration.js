@@ -29,7 +29,7 @@ function VibrationCtrl($scope, $interval, ngUrlBind) {
     $scope.Mi = [[1,0,0],[0,1,0],[0,0,1]];
     $scope.Ki = [[2,-1,0],[-1,2,-1],[0,-1,1]];
     $scope.u0i = [0,1,1];
-    v = [0,0,0];
+    $scope.v0i = [0,0,0];
 
     ngUrlBind($scope, 'nDofi');
     ngUrlBind($scope, 'Mi');
