@@ -21,7 +21,6 @@
     "angular": "angularjs#~1.4.8",
     "highcharts": "~4.2.1",
     "paper": "~0.9.25",
-    "MathJax": "~2.6.0",
     "angular-bootstrap-slider": "~0.1.21",
     "numericjs": "~1.2.6",
     "ngUrlBind": "^0.0.2",
